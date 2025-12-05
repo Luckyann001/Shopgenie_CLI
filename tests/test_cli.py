@@ -1,6 +1,6 @@
 import pytest
 from click.testing import CliRunner
-from shopgenie.cli.commands import start
+from shopgenie.cli.command import start
 from shopgenie.database.config import Base, engine
 
 @pytest.fixture(scope="module", autouse=True)

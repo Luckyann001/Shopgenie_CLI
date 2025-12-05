@@ -1,8 +1,12 @@
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, declarative_base
+from sqlalchemy.orm import declarative_base, sessionmaker
 
-engine = create_engine("sqlite:///shopgenie.db", echo=False)
-Session = sessionmaker(bind=engine)
-session = Session()
+DATABASE_URL = "sqlite:///shopgenie.db"
+
+engine = create_engine(DATABASE_URL, echo=False)
+SessionLocal = sessionmaker(bind=engine)
 
 Base = declarative_base()
+
+# This is what your tests expect
+session = SessionLocal()
